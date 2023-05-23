@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>공지사항 작성</h1>
+  <form method="post" action="{{ url_for('notice_write_process') }}">
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="content">내용</label>
+      <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="author">작성자</label>
+      <input type="text" class="form-control" id="author" name="author" required>
+    </div>
+    <div class="form-group">
+      <label for="date">작성일</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">작성</button>
+  </form>
+  <script>
+    // Set the current date as the default value for the date input
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().substr(0, 10);
+    dateInput.value = today;
+  </script>
+{% endblock %}

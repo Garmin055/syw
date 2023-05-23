@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scrolling Logo with Text Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .heading {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 50px;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1 class="heading hidden">Your Text Goes Here</h1>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var logo = document.querySelector('.logo');
+            var heading = document.querySelector('.heading');
+
+            var scrollPosition = window.pageYOffset;
+            logo.style.top = scrollPosition + 'px';
+
+            if (scrollPosition >= 200) {
+                heading.classList.add('visible');
+                heading.classList.remove('hidden');
+            } else {
+                heading.classList.add('hidden');
+                heading.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>

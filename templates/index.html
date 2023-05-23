@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        li {
+            margin: 0 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>테스트 웹사이트</h1>
+    <ul>
+        <li><a href="{{ url_for('board') }}">게시판</a></li>
+        <li><a href="{{ url_for('notice') }}">공지사항</a></li>
+        <li><a href="{{ url_for('login') }}">로그인</a></li>
+        <li><a href="{{ url_for('register') }}">회원가입</a></li>
+    </ul>
+</body>
+</html>

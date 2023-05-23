@@ -2,76 +2,48 @@
 <html>
 
 <head>
-    <title>Scrolling Logo with Text Animation</title>
+    <title>Scroll Page Logo Fade-In</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 100%;
-            height: 100vh;
+            height: 2000px;
+            /* 페이지 높이를 설정해주세요. */
             background-color: #f2f2f2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .logo {
-            width: 200px;
-            height: auto;
-            position: absolute;
-            top: 0;
+            
+            position: fixed;
+            /* 로고가 고정됩니다. */
+            top: 50%;
+            /* 로고가 수직으로 중앙에 위치합니다. */
             left: 50%;
-            transform: translateX(-50%);
-            transition: all 0.5s ease-in-out;
-        }
-
-        .heading {
-            font-size: 48px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 50px;
+            /* 로고가 수평으로 중앙에 위치합니다. */
+            transform: translate(-50%, -50%);
+            /* 로고가 정확하게 중앙에 위치하도록 합니다. */
             opacity: 0;
-            transition: all 0.5s ease-in-out;
+            /* 로고의 투명도를 초기값으로 설정합니다. */
+            animation: fade-in 1s ease-in-out forwards;
+            /* 로고가 나타나는 애니메이션을 지정합니다. */
         }
 
-        .visible {
-            opacity: 1;
-        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
 
-        .hidden {
-            opacity: 0;
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1 class="heading hidden">Your Text Goes Here</h1>
+    <div class="logo">
+        <h1>서연고등학교</h1>
     </div>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            var logo = document.querySelector('.logo');
-            var heading = document.querySelector('.heading');
-
-            var scrollPosition = window.pageYOffset;
-            logo.style.top = scrollPosition + 'px';
-
-            if (scrollPosition >= 200) {
-                heading.classList.add('visible');
-                heading.classList.remove('hidden');
-            } else {
-                heading.classList.add('hidden');
-                heading.classList.remove('visible');
-            }
-        });
-    </script>
 </body>
 
 </html>
+
+위 페이지에서 로고가 등장 후 사라지지 않게 해줘

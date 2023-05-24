@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Scroll Page Logo Fade-In</title>
+    <title>HWR</title>
     <style>
         body {
             height: 2000px;
@@ -11,19 +11,22 @@
         }
 
         .logo {
-            
             position: fixed;
-            /* 로고가 고정됩니다. */
             top: 50%;
-            /* 로고가 수직으로 중앙에 위치합니다. */
             left: 50%;
-            /* 로고가 수평으로 중앙에 위치합니다. */
             transform: translate(-50%, -50%);
-            /* 로고가 정확하게 중앙에 위치하도록 합니다. */
             opacity: 0;
-            /* 로고의 투명도를 초기값으로 설정합니다. */
             animation: fade-in 1s ease-in-out forwards;
-            /* 로고가 나타나는 애니메이션을 지정합니다. */
+        }
+        .homeImage {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            animation: fade-in 1s ease-in-out forwards;
+            
         }
 
         @keyframes fade-in {
@@ -39,11 +42,13 @@
 </head>
 
 <body>
-    <div>
-        <img src="images/homeBg.png" alt="bg img">
+    <div class="homeImage">
+        <img src="https://seoyeon.hs.kr/hosts/seoyeon/visual/Visual_Main_09.jpg" alt="bg img">
     </div>
     <div class="logo">
-        <h1>서연고등학교</h1>
+        <h1>ㅅㅂ</h1>
     </div>
 </body>
 </html>
+
+위 코드에서 homeImage 의 이미지가 화면을 완전히 채우게 해줘

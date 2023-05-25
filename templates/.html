@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* 초기 상태 스타일 */
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      background-color: cream;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      transition: opacity 2s, transform 2s;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(0, 0, 0);
+      font-size: 100px;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 1;
+      transition: opacity 2s, transform 2s;
+    }
+
+    /* 애니메이션 효과 */
+    .container.fade-out {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    .logo.shrink-and-move {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  </style>
+  <script>
+    // 페이지 로딩 후 애니메이션 클래스 추가
+    window.addEventListener('load', function() {
+      var container = document.querySelector('.container');
+      var logo = document.querySelector('.logo');
+
+      container.classList.add('fade-out');
+      logo.classList.add('shrink-and-move');
+    });
+  </script>
+</head>
+<body>
+  <div class="container"></div>
+  <div class="logo">SEOYEON</div>
+</body>
+</html>

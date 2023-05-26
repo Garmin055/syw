@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+.mainCont {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 0.7s, transform 0.7s;
+}
+.serveCont {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(186, 186, 186);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 251, 219);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.1s, transform 0.1s;
+}
+
+.bar {
+    width: 100%;
+    height: 7%;
+    background-color: rgb(233, 233, 233);
+    position: fixed;
+    top: -10;
+    left: 0;
+    opacity: 1;
+    transform: translateY(-100%);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.menuL {
+    position: fixed;
+    top: 0%;
+    right: 2%;
+    color: rgb(137, 137, 137);
+    font-size: 20px;
+    font-weight: bold;
+    transform: translateY(-100%);
+    opacity: 1;
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+}
+.menuN {
+    position: fixed;
+    top: 0%;
+    right: 6.5%;
+    color: rgb(137, 137, 137);
+    font-size: 20px;
+    font-weight: bold;
+    transform: translateY(-100%);
+    opacity: 1;
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+}
+.menuC {
+    position: fixed;
+    top: 0%;
+    right: 10%;
+    color: rgb(137, 137, 137);
+    font-size: 20px;
+    font-weight: bold;
+    transform: translateY(-100%);
+    opacity: 1;
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+}
+.logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.mainCont.mainCont-move {
+    top: 40%;
+    transition: all 0.7s ease-out;
+    animation: moveLogo 0.7s ease-out 0.7s forwards;
+}
+.serveCont.serveCont-move {
+    top: 45%;
+    transition: all 0.7s ease-out;
+    animation: moveLogo 0.7s ease-out 0.7s forwards;
+}
+
+.container.fade-out {
+    opacity: 1;
+    transition: all 0.7s ease-out;
+    animation: moveCont 0.7s ease-out 0.7s forwards;
+    transform: translateY(-100%);
+}
+
+.logo.shrink-and-move {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+}
+
+.logo.logo-move {
+    top: 4%;
+    left: 7%;
+    transition: all 0.7s ease-out;
+    animation: moveLogo 0.7s ease-out 0.7s forwards;
+}
+
+.bar.bar-move {
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.menuL.menuL-move {
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+    opacity: 1;
+    transform: translateY(70%);
+}
+.menuN.menuN-move {
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+    opacity: 1;
+    transform: translateY(70%);
+}
+.menuC.menuC-move {
+    transition: all 0.7s ease-out;
+    animation: moveBar 0.7s ease-out 0.7s forwards;
+    opacity: 1;
+    transform: translateY(70%);
+}

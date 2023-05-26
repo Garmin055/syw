@@ -5,7 +5,8 @@ app = Flask(__name__)
 app.secret_key = '1234'
 
 # 데이터베이스 연결
-conn = sqlite3.connect('board.db')
+databass = 'data/board.db'
+conn = sqlite3.connect(databass)
 c = conn.cursor()
 
 # 게시판 테이블 생성
@@ -50,7 +51,7 @@ def index():
 @app.route('/board')
 def board():
     # 게시글 목록 가져오기
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM board ORDER BY id DESC')
     rows = c.fetchall()
@@ -74,7 +75,7 @@ def board_write_process():
     author = request.form['author']
     date = request.form['date']
     # 게시글 저장
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('INSERT INTO board (title, content, author, date) VALUES (?, ?, ?, ?)', (title, content, author, date))
     conn.commit()
@@ -85,7 +86,7 @@ def board_write_process():
 @app.route('/board/<int:id>')
 def board_detail(id):
     # 게시글 정보 가져오기
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM board WHERE id = ?', (id,))
     row = c.fetchone()
@@ -96,7 +97,7 @@ def board_detail(id):
 @app.route('/notice')
 def notice():
     # 공지사항 목록 가져오기
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM notice ORDER BY id DESC')
     rows = c.fetchall()
@@ -123,7 +124,7 @@ def notice_write_process():
     author = request.form['author']
     date = request.form['date']
     # 공지사항 저장
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('INSERT INTO notice (title, content, author, date) VALUES (?, ?, ?, ?)', (title, content, author, date))
     conn.commit()
@@ -134,7 +135,7 @@ def notice_write_process():
 @app.route('/notice/<int:id>')
 def notice_detail(id):
     # 공지사항 정보 가져오기
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM notice WHERE id = ?', (id,))
     row = c.fetchone()
@@ -150,7 +151,7 @@ def search():
     # 검색어 가져오기
     keyword = request.form['keyword']
     # 게시글 검색
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM board WHERE title LIKE ? OR content LIKE ?', ('%'+keyword+'%', '%'+keyword+'%'))
     rows = c.fetchall()
@@ -170,7 +171,7 @@ def login_process():
     password = request.form['password']
     # 사용자 인증
     try:
-        conn = sqlite3.connect('board.db')
+        conn = sqlite3.connect(databass)
         c = conn.cursor()
         c.execute('SELECT * FROM user WHERE username = ? AND password = ?', (username, password))
         user = c.fetchone()
@@ -205,7 +206,7 @@ def register_process():
     password = request.form['password']
 
     # 중복 username 체크
-    conn = sqlite3.connect('board.db')
+    conn = sqlite3.connect(databass)
     c = conn.cursor()
     c.execute('SELECT * FROM user WHERE username = ?', (username,))
     result = c.fetchone()

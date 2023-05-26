@@ -1,6 +1,7 @@
-# Project_HWR
-highschool website remodeling
+# Project_SYW
+seoyeon website
 서연고 웹사이트 리모델링 프로젝트
+공식 웹사이트가 너무 클래식한 관계로, 디자인을 중점으로 제작
 
 아래의 조건을 충족한 고등학교 웹사이트를 제작:
 1. 고등학교 웹사이트에 들어갈 요소들을 적용. 

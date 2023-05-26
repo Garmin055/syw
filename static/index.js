@@ -1,6 +1,7 @@
 window.addEventListener('load', function () {
     var mainCont = document.querySelector('.mainCont');
     var serveCont = document.querySelector('.serveCont');
+    var lNotice = document.querySelector('.lNotice');
     var container = document.querySelector('.container');
     var logo = document.querySelector('.logo');
     var bar = document.querySelector('.bar');
@@ -19,10 +20,13 @@ window.addEventListener('load', function () {
                 menuC.classList.add('menuC-move');
                 mainCont.classList.add('mainCont-move');
                 setTimeout(function () {
-                menuN.classList.add('menuN-move');
-                serveCont.classList.add('serveCont-move');
+                    menuN.classList.add('menuN-move');
+                    serveCont.classList.add('serveCont-move');
                     setTimeout(function () {
-                    menuL.classList.add('menuL-move');
+                        menuL.classList.add('menuL-move');
+                        setTimeout(function () {
+                        lNotice.classList.add('lNotice-move');
+                        }, 300);
                     }, 100);
                 }, 100);
             }, 500);

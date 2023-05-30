@@ -39,18 +39,78 @@ html {
 }
 
 .lNotice {
+    z-index: 1;
     width: 20%;
     height: 8%;
     position: absolute;
     background-color: rgb(242, 242, 242);
     color: rgb(110, 110, 110);
+    border-radius: 0.7em;
     top: 110%;
     left: 35%;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    line-height: 75px;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.noticeBox {
+    opacity: 0;
+    z-index: 0;
+    width: 20%;
+    height: 0;
+    position: absolute;
+    background-color: rgb(232, 232, 232);
+    color: rgb(0, 0, 0);
+    top: 47%;
+    left: 25%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.lLunch {
+    z-index: 1;
+    width: 20%;
+    height: 8%;
+    position: absolute;
+    background-color: rgb(242, 242, 242);
+    color: rgb(110, 110, 110);
+    border-radius: 0.7em;
+    top: 110%;
+    left: 65%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 75px;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.lunchBox {
+    opacity: 0;
+    z-index: 0;
+    width: 20%;
+    height: 0;
+    position: absolute;
+    background-color: rgb(232, 232, 232);
+    color: rgb(0, 0, 0);
+    top: 47%;
+    left: 55%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transform-origin: top;
+    transform: scaleY(0);
     transition: opacity 0.7s, transform 0.7s;
 }
 
@@ -125,27 +185,36 @@ html {
     transition: opacity 0.7s, transform 0.7s;
 }
 
+/* ========= 애니메이션 효과 =========*/
+
 .mainCont.mainCont-move {
     top: 28%;
-    transition: all 0.7s ease-out;
-    animation: moveLogo 0.7s ease-out 0.7s forwards;
+    transition: all 0.7s cubic-bezier(0.1, 0, 0.2, 1.0);
 }
 .serveCont.serveCont-move {
     top: 35%;
-    transition: all 0.7s ease-out;
-    animation: moveLogo 0.7s ease-out 0.7s forwards;
+    transition: all 0.7s cubic-bezier(0.1, 0, 0.2, 1.0);
 }
 
-.lNotice.lNotice-move {
+
+.lNotice.lNotice-move,
+.lLunch.rLunch-move {
     top: 45%;
-    transition: all 0.7s ease-out;
-    animation: moveLogo 0.7s ease-out 0.7s forwards;
+    transition: all 0.7s cubic-bezier(0.1, 0, 0.2, 1.0);
+}
+
+.noticeBox.noticeBox-move,
+.lunchBox.lunchBox-move {
+    opacity: 1;
+    height: 400px;
+    transform: scaleY(1);
+    transition: all 0.7s ease-in;
 }
 
 .container.fade-out {
     opacity: 1;
-    transition: all 0.7s ease-out;
-    animation: moveCont 0.7s ease-out 0.7s forwards;
+    animation-delay: 0.1s;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     transform: translateY(-100%);
 }
 
@@ -156,34 +225,21 @@ html {
 }
 
 .logo.logo-move {
-    top: 4%;
+    top: 3%;
     left: 7%;
     transition: all 0.7s ease-out;
-    animation: moveLogo 0.7s ease-out 0.7s forwards;
 }
 
 .bar.bar-move {
     transition: all 0.7s ease-out;
-    animation: moveBar 0.7s ease-out 0.7s forwards;
     opacity: 1;
     transform: translateY(0%);
 }
 
-.menuL.menuL-move {
-    transition: all 0.7s ease-out;
-    animation: moveBar 0.7s ease-out 0.7s forwards;
-    opacity: 1;
-    transform: translateY(70%);
-}
-.menuN.menuN-move {
-    transition: all 0.7s ease-out;
-    animation: moveBar 0.7s ease-out 0.7s forwards;
-    opacity: 1;
-    transform: translateY(70%);
-}
+.menuL.menuL-move,
+.menuN.menuN-move,
 .menuC.menuC-move {
     transition: all 0.7s ease-out;
-    animation: moveBar 0.7s ease-out 0.7s forwards;
     opacity: 1;
     transform: translateY(70%);
 }

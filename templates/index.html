@@ -2,16 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Testing</title>
-    
+    <title>SYW</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+    <script type="text/javaScript" src="{{ url_for('static', filename='index.js') }}"></script>
 </head>
+
 <body>
-    <h1>테스트 웹사이트</h1>
-    <ul>
-        <li><a href="{{ url_for('board') }}">게시판</a></li>
-        <li><a href="{{ url_for('notice') }}">공지사항</a></li>
-        <li><a href="{{ url_for('login') }}">로그인</a></li>
-        <li><a href="{{ url_for('register') }}">회원가입</a></li>
-    </ul>
+    <div class="bar"></div>
+    <div class="mainCont">서연고등학교</div>
+    <div class="serveCont">다름을 존중하고 꿈을 찾아 도전하는 지혜로운 공동체</div>
+
+    <div class="lNotice"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="lLunch"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="noticeBox"></div>
+    <div class="lunchBox"></div>
+
+    <!--상단 바-->
+    <div class="menuL"><a href="{{ url_for('login') }}">로그인</a></div>
+    <div class="menuN"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="menuC"><a href="{{ url_for('board') }}">게시판</a></div>
+    <div class="logo"><a href="/">SEOYEON</a></div>
+    <div class="container"></div>
 </body>
+
 </html>

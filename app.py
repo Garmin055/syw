@@ -45,7 +45,7 @@ def popupmassage(txt):
 # 메인 페이지
 @app.route('/')
 def index():
-    return render_template('.html')
+    return render_template('index.html')
 
 # 게시판 페이지
 @app.route('/board')

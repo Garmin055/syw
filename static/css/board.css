@@ -1,3 +1,5 @@
 .boardTable {
     margin: 0 auto;
+    top: 100%;
+    left: 50%;
 }

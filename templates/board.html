@@ -8,66 +8,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
     <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .searchContainer {
-            margin-bottom: 20px;
-        }
-        
-        .searchContainer input[type="text"] {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        .searchContainer input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .boardTable {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        
-        .boardTable th, .boardTable td {
-            padding: 10px;
-            text-align: center;
-        }
-        
-        .boardTable th {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        .boardTable tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .boardTable tbody tr:hover {
-            background-color: #ddd;
-        }
-        
-        .boardTable th:first-child, .boardTable td:first-child {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-        
-        .boardTable th:last-child, .boardTable td:last-child {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
     </style>
 </head>
 <body>

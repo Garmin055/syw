@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SYW</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
+    <script type="text/javaScript" src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+
+<body>
+    <div class="bar"></div>
+    <div class="mainCont">급식</div>
+    <div class="serveCont">다름을 존중하고 꿈을 찾아 도전하는 지혜로운 공동체</div>
+
+    <div class="lNotice"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="lunchLogo"><a href="{{ url_for('lunch') }}">급식</a></div>
+    <div class="lunchs"></div>
+
+    <!--상단 바-->
+    <div class="menuL"><a href="{{ url_for('login') }}">로그인</a></div>
+    <div class="menuN"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="menuC"><a href="{{ url_for('board') }}">게시판</a></div>
+    <div class="logo"><a href="/">SEOYEON</a></div>
+    <div class="container"></div>
+</body>
+
+</html>

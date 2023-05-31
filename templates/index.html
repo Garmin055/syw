@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>SYW</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
-    <script type="text/javaScript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/index.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
+    <script type="text/javaScript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script type="text/javaScript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 
 <body>
-    <div class="bar"></div>
-    <div class="mainCont">서연고등학교</div>
-    <div class="serveCont">다름을 존중하고 꿈을 찾아 도전하는 지혜로운 공동체</div>
+    
+    <div class="mainCont bold">서연고등학교</div>
+    <div class="serveCont medium">다름을 존중하고 꿈을 찾아 도전하는 지혜로운 공동체</div>
 
-    <div class="lNotice"><a href="{{ url_for('notice') }}">공지</a></div>
-    <div class="lLunch"><a href="{{ url_for('notice') }}">공지</a></div>
-    <div class="noticeBox"></div>
-    <div class="lunchBox"></div>
+    <div class="lNotice bold"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="lLunch bold"><a href="{{ url_for('lunch') }}">급식</a></div>
+    <div class="noticeBox medium"></div>
+    <div class="lunchBox medium"></div>
 
     <!--상단 바-->
-    <div class="menuL"><a href="{{ url_for('login') }}">로그인</a></div>
-    <div class="menuN"><a href="{{ url_for('notice') }}">공지</a></div>
-    <div class="menuC"><a href="{{ url_for('board') }}">게시판</a></div>
-    <div class="logo"><a href="/">SEOYEON</a></div>
-    <div class="container"></div>
+    <div class="bar"></div>
+    <div class="menuL medium"><a href="{{ url_for('login') }}">로그인</a></div>
+    <div class="menuN medium"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="menuC medium"><a href="{{ url_for('board') }}">게시판</a></div>
+    <div class="logo bold"><a href="/">SEOYEON</a></div>
+    <div class="curtain"></div>
 </body>
 
 </html>

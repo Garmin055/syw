@@ -17,6 +17,11 @@ c.execute('''CREATE TABLE IF NOT EXISTS board
               author TEXT NOT NULL,
               date TEXT NOT NULL)''')
 
+# 급식 테이블 생성
+c.execute('''CREATE TABLE IF NOT EXISTS lunch
+             (date TEXT NOT NULL,
+              content TEXT NOT NULL)''')
+
 # 공지사항 테이블 생성
 c.execute('''CREATE TABLE IF NOT EXISTS notice
              (id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -92,6 +97,17 @@ def board_detail(id):
     row = c.fetchone()
     conn.close()
     return render_template('board_detail.html', row=row)
+
+# 게시판 페이지
+@app.route('/lunch')
+def lunch():
+    # 게시글 목록 가져오기
+    conn = sqlite3.connect(databass)
+    c = conn.cursor()
+    c.execute('SELECT * FROM lunch')
+    rows = c.fetchall()
+    conn.close()
+    return render_template('lunch.html', rows=rows)
 
 # 공지사항 페이지
 @app.route('/notice')

@@ -1,0 +1,6 @@
+selenium
+requests
+flask
+render_template
+sqlite3
+pysqlite3

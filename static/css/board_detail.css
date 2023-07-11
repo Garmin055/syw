@@ -1,0 +1,36 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+}
+a {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+} */
+
+.title {
+    top: 37%;
+    left: 28%;
+    
+}

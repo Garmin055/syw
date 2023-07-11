@@ -57,7 +57,7 @@
     left: 25%;
     font-size: 30px;
     font-weight: bold;
-    text-align: center;
+    text-align: start;
     transform: translate(-50%, -50%);
     transform-origin: top;
     transform: scaleY(0);

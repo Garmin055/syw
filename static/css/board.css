@@ -1,5 +1,72 @@
-.boardTable {
+/* .boardTable {
     margin: 0 auto;
     top: 100%;
     left: 50%;
+} */
+
+h2 {
+    position: absolute;
+    font-size: 2em;
+    float: left;
+    top: 19vh;
+    left: 30%;
+}
+
+.searchContainer {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.boardContainer {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    border-right:none;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
+}
+
+th {
+    position: sticky;
+    top: 0;
+}
+
+td, th {
+    padding: 8px;
+    border-bottom: 1px solid #a4a3a5;
+}
+
+.boardTable th.num {
+    border-top: 2px solid #333;
+    width: 50px;
+}
+
+.boardTable th.title {
+    border-top: 2px solid #333;
+    width: 350px;
+}
+
+.boardTable th.author, .boardTable th.date {
+    border-top: 2px solid #333;
+    width: 70px;
+}
+
+.boardTable td.num, .boardTable td.author {
+    text-align: center;
+}
+
+.boardTable td.date {
+    font-size: 14px;
 }

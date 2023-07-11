@@ -17,15 +17,20 @@
 
     <div class="lNotice bold"><a href="{{ url_for('notice') }}">공지</a></div>
     <div class="lLunch bold"><a href="{{ url_for('lunch') }}">급식</a></div>
-    <div class="noticeBox medium"></div>
-    <div class="lunchBox medium"></div>
+    <div class="noticeBox medium"><pre>{{ row[0] }}</pre></div>
+    <div class="lunchBox medium"><pre></pre></div>
 
     <!--상단 바-->
     <div class="bar"></div>
+    {% if 'username' in session %}
+    <div class="menuL medium"><a href="{{ url_for('logout')}}">로그아웃</a></div>
+    {% else %}
     <div class="menuL medium"><a href="{{ url_for('login') }}">로그인</a></div>
+    {% endif %}
     <div class="menuN medium"><a href="{{ url_for('notice') }}">공지</a></div>
     <div class="menuC medium"><a href="{{ url_for('board') }}">게시판</a></div>
     <div class="logo bold"><a href="/">SEOYEON</a></div>
+    <div class="menuLbox medium"></div>
     <div class="curtain"></div>
 </body>
 

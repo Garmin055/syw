@@ -2,84 +2,50 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>검색 결과</title>
+    <title>게시판</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/board.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        form {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        input[type="text"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        button[type="submit"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #333;
-            color: #fff;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <h3><a href="/">서연고등학교 </a></h3>
-    <h1>검색 결과</h1>
-    <form action="/search" method="post">
-        <input type="text" name="keyword" placeholder="검색어를 입력하세요">
-        <button type="submit">검색</button>
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in rows %}
-            <tr>
-                <td>{{ row[0] }}</td>
-                <td><a href="/board/{{ row[0] }}">{{ row[1] }}</a></td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <!--상단 바-->
+    <div class="bar"></div>
+    <div class="menuL medium"><a href="{{ url_for('login') }}">로그인</a></div>
+    <div class="menuN medium"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="menuC medium"><a href="{{ url_for('board') }}">게시판</a></div>
+    <div class="logo bold"><a href="/">SEOYEON</a></div>
+    <div class="curtain"></div>
+    
+    <div class="searchContainer">
+        <form action="/search" method="post">
+            <input type="text" name="keyword" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </form>
+    </div>
+    
+    <h2>검색</h2>
+    <div class="boardContainer">
+        <table class="boardTable">
+            <thead class="thead">
+                <th class="num bold" scope="col">번호</th>
+                <th class="title bold" scope="col">제목</th>
+                <th class="author bold" scope="col">작성자</th>
+                <th class="date bold" scope="col">작성일</th>
+            </thead>
+            <tbody class="tbody">
+                {% for row in rows %}
+                <tr>
+                    <td class="num bold" scope="row">{{ row[0] }}</td>
+                    <td class="title medium"><a href="/board/{{ row[0] }}" class="card-link">{{ row[1] }}</a></td>
+                    <td class="author medium">{{ row[3] }}</td>
+                    <td class="date medium">{{ row[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

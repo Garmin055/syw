@@ -5,19 +5,9 @@
     <title>공지사항</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/base.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/notice.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
-    <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .noticeTable {
-            margin: 0 auto;
-        }
-    </style>
+    
 </head>
 <body>
     <!--상단 바-->
@@ -28,27 +18,44 @@
     <div class="logo bold"><a href="/">SEOYEON</a></div>
     <div class="curtain"></div>
     
+    <h2>공지사항</h2>
     <div class="container">
         <table class="boardTable">
-            <thead class="thead-dark">
-                <tr>
-                    <th class="bold" scope="col">번호</th>
-                    <th class="bold" scope="col">제목</th>
-                    <th class="bold" scope="col">작성자</th>
-                    <th class="bold" scope="col">작성일</th>
-                </tr>
+            <thead class="thead">
+                <th class="num bold" scope="col">번호</th>
+                <th class="title bold" scope="col">제목</th>
+                <th class="author bold" scope="col">작성자</th>
+                <th class="date bold" scope="col">작성일</th>
             </thead>
-            <tbody>
+            <tbody class="tbody">
                 {% for row in rows %}
                 <tr>
-                    <th class="medium" scope="row">{{ row[0] }}</th>
-                    <td class="medium"><a href="{{ url_for('notice_detail', id=row[0]) }}" class="card-link">{{ row[1] }}</a></td>
-                    <td class="medium">{{ row[3] }}</td>
-                    <td class="medium">{{ row[4] }}</td>
+                    <td class="num bold" scope="row">{{ row[0] }}</td>
+                    <td class="title medium"><a href="{{ url_for('notice_detail', id=row[0]) }}" class="card-link">{{ row[1] }}</a></td>
+                    <td class="author medium">{{ row[3] }}</td>
+                    <td class="date medium">{{ row[4] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+    <!-- <table class="boardTable">
+        <thead class="thead">
+            <th class="num bold" scope="col">번호</th>
+            <th class="title bold" scope="col">제목</th>
+            <th class="author bold" scope="col">작성자</th>
+            <th class="date bold" scope="col">작성일</th>
+        </thead>
+        <tbody class="tbody">
+            {% for row in rows %}
+            <tr>
+                <th class="medium" scope="row">{{ row[0] }}</th>
+                <td class="medium"><a href="{{ url_for('notice_detail', id=row[0]) }}" class="card-link">{{ row[1] }}</a></td>
+                <td class="medium">{{ row[3] }}</td>
+                <td class="medium">{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
 </body>
 </html>

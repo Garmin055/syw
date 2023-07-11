@@ -19,30 +19,29 @@
     <div class="logo bold"><a href="/">SEOYEON</a></div>
     <div class="curtain"></div>
     
-    <div class="container">
-        <div class="searchContainer">
-            <form action="/search" method="post">
-                <input type="text" placeholder="검색어를 입력하세요">
-                <input type="submit" value="검색">
-            </form>
-        </div>
-        
+    <div class="searchContainer">
+        <form action="/search" method="post">
+            <input type="text" name="keyword" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </form>
+    </div>
+    
+    <h2>게시판</h2>
+    <div class="boardContainer">
         <table class="boardTable">
-            <thead class="thead-dark">
-                <tr>
-                    <th class="bold" scope="col">번호</th>
-                    <th class="bold" scope="col">제목</th>
-                    <th class="bold" scope="col">작성자</th>
-                    <th class="bold" scope="col">작성일</th>
-                </tr>
+            <thead class="thead">
+                <th class="num bold" scope="col">번호</th>
+                <th class="title bold" scope="col">제목</th>
+                <th class="author bold" scope="col">작성자</th>
+                <th class="date bold" scope="col">작성일</th>
             </thead>
-            <tbody>
+            <tbody class="tbody">
                 {% for row in rows %}
                 <tr>
-                    <th class="medium" scope="row">{{ row[0] }}</th>
-                    <td class="medium"><a href="{{ url_for('notice_detail', id=row[0]) }}" class="card-link">{{ row[1] }}</a></td>
-                    <td class="medium">{{ row[3] }}</td>
-                    <td class="medium">{{ row[4] }}</td>
+                    <td class="num bold" scope="row">{{ row[0] }}</td>
+                    <td class="title medium"><a href="{{ url_for('board_detail', id=row[0]) }}" class="card-link">{{ row[1] }}</a></td>
+                    <td class="author medium">{{ row[3] }}</td>
+                    <td class="date medium">{{ row[4] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

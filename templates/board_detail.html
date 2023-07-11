@@ -3,45 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ row[1] }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 30px 0;
-        }
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 16px;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/font.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/notice.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/board_detail.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
 </head>
 <body>
-    <h1>{{ row[1] }}</h1>
-    <p>{{ row[3] }} | {{ row[4] }}</p>
-    <hr>
-    <p>{{ row[2] }}</p>
-    <hr>
+    <!--상단 바-->
+    <div class="bar"></div>
+    {% if 'username' in session %}
+    <div class="menuL medium"><a href="{{ url_for('logout')}}">로그아웃</a></div>
+    {% else %}
+    <div class="menuL medium"><a href="{{ url_for('login') }}">로그인</a></div>
+    {% endif %}
+    <div class="menuN medium"><a href="{{ url_for('notice') }}">공지</a></div>
+    <div class="menuC medium"><a href="{{ url_for('board') }}">게시판</a></div>
+    <div class="logo bold"><a href="/">SEOYEON</a></div>
+    <div class="menuLbox medium"></div>
+    <div class="curtain"></div>
+
+
+    <h1 class="title">{{ row[1] }}</h1>
+    <p class="author">{{ row[3] }}</p>
+    <p class="date">{{ row[4] }}</p>
+    <p class="detail">{{ row[2] }}</p>
     <a href="/board">목록으로</a>
 </body>
 </html>
